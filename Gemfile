@@ -50,3 +50,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'friendly_id', '~>5.2.4'
+
+gem 'google-api-client', require: 'google/apis/calendar_v3'
