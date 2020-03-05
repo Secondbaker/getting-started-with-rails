@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/callback', to: 'example#callback', as: 'callback'
   get '/calendars', to: 'example#calendars', as: 'calendars'
   get '/events/:calendar_id', to: 'example#events', as: 'events', calendar_id: /[^\/]+/
+  get '/all_events', to: 'example#all_events', as: 'all_events'
 
 
   root 'welcome#index'

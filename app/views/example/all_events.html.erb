@@ -1,0 +1,12 @@
+<ul>
+  <% @calendar_list.items.each do |calendar| %>
+    <li>
+    <%= calendar.summary %> (<%= calendar.id %>)
+    <ul>
+        <% @event_list[calendar.id].items.each do |event| %>
+        <li><%= event.summary %> (<%= event.id %>)</li>
+        <% end %>
+    </ul>
+    </li>
+  <% end %>
+</ul>
