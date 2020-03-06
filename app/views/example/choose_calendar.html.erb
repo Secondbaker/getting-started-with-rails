@@ -1,4 +1,4 @@
-<%= select_tag(
+<!--<%= select_tag(
   'calendar',
   options_for_select(
     @calendar_list.items.map { |calendar| [calendar.summary, calendar.id] }
@@ -11,4 +11,14 @@
     url: '/calendars',
     method: 'get'
   }
-) %>
+) %>-->
+<p>Inline JS</p>
+<a href="#" onclick="this.style.backgroundColor='#990000'">Paint it red</a>
+<p>More Inline JS</p>
+<a href="#" onclick="this.style.backgroundColor='#009900';this.style.color='#FFFFFF';">Paint it green</a>
+
+
+
+<a href="#" data-background-color="#990000">Paint it red</a>
+<a href="#" data-background-color="#009900" data-text-color="#FFFFFF">Paint it green</a>
+<a href="#" data-background-color="#000099" data-text-color="#FFFFFF">Paint it blue</a>
