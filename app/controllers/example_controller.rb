@@ -51,6 +51,20 @@ class ExampleController < ApplicationController
 
     end
 
+    def choose_calendar
+        client = Signet::OAuth2::Client.new(client_options)
+        client.update!(session[:authorization])
+
+        service = Google::Apis::CalendarV3::CalendarService.new
+        service.authorization = client
+
+        @calendar_list = service.list_calendar_lists
+        @event_list = Hash.new
+        #@calendar_list.items.each do |calendar|
+        #    @event_list[calendar.id] = service.list_events(calendar.id)
+        #end
+    end
+
     private
   
     def client_options

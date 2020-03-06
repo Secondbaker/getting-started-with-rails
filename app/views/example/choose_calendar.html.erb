@@ -1,0 +1,14 @@
+<%= select_tag(
+  'calendar',
+  options_for_select(
+    @calendar_list.items.map { |calendar| [calendar.summary, calendar.id] }
+  ),
+  prompt: "Choose Calendar",
+  class: 'input-block-level chzn-select calendar_dropdown',
+  id: 'calendar_dropdown',
+  data: {
+    remote: true,
+    url: '/calendars',
+    method: 'get'
+  }
+) %>
